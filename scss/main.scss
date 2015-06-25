@@ -127,7 +127,26 @@ body {
     color:$white;
 }
 
-h1{ margin:0;line-height: 1;font-weight:400}
+h1{
+    margin:0;
+    line-height: 1;
+    font-weight:400;
+    text-transform: uppercase;
+    &.title{
+        font-size:1.8em;
+        width:100%;
+        padding: 0.5em 1em;
+        background-color:$plum;
+        position:fixed;
+        z-index:1000;
+        span{text-transform: none;}
+    }
+}
+
+h2{
+    margin:0;
+    padding: 0;
+}
 
 a {
     text-decoration: none;
@@ -155,34 +174,29 @@ ul{padding:0;margin:0;}
         display:inline-block;
     }
 }
-.header-group{
+
+.about{
     width:100%;
-    padding:1em;
-    background-color:$plum;
-    position:fixed;
-    z-index:1000;
-    h1{
-        letter-spacing: 0.05em;
+    height:100%;
+    text-align:center;
+    position:relative;
+    text-shadow:0.07em 0.07em 0 $grey;
+    padding:25% 5%;
+
+    .flexbox &{display:flex;
+        flex-direction:column;
+        justify-content:center;
+        padding:0 5%;
     }
     p{
         margin:0;
-        padding: 0;
-    }
-
-    h2{
-        margin:0;
-        padding: 0;
     }
     @media screen and (min-width: 600px) {
-        .header-group{ width:100%;}
+        font-size: 2em;
     }
-
-}
-
-.about{
-    text-align:center;
-    position:relative;
-    top:50vh;
+    @media screen and (min-width: 1200px) {
+        font-size:4em;
+    }
 }
 
 section{
@@ -194,7 +208,6 @@ section{
     perspective:1000px;
     @media screen and (min-width: 600px) {
        width:50%;
-       font-size:75%;
     }
     @media screen and (min-width: 900px) {
        width:33.333333%;
@@ -293,7 +306,7 @@ section{
         text-decoration: none;
         color:$white;
         border: 2px solid $white;
-        padding:1em;
+        padding:0.5em 1em;
         display:inline-block;
     }
 
