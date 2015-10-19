@@ -1,4 +1,4 @@
-/*global $, jQuery, TweenMax, Power1 */
+/*global $ */
 
 $(document).ready(function() {
     $('section').on('click', function() {
@@ -7,9 +7,7 @@ $(document).ready(function() {
         $(this).find('.section-meta, img, .descr').toggleClass('anim');
     });
 
-    $('section').hover(function() {
-        //
-    }, function() {
+    $('section').on('mouseleave', function() {
         var ele = $(this).find('.section-meta, img, .descr');
         if( ele.hasClass('anim') ) { ele.removeClass('anim'); }
     });

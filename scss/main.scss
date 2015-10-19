@@ -20,7 +20,6 @@ html {
 }
 
 html {
-    color: #223;
     font-size: 1em;
     line-height: 1.4;
 }
@@ -123,7 +122,7 @@ $grey: #444;
 $black: #000;
 
 body {
-    font-family:"akzidenz-grotesk bq condensed",'Oswald',gotham-book, sans-serif;
+    font-family:'Oswald',gotham-book, sans-serif;
     background-color:$white;
     color:$white;
 }
@@ -133,16 +132,16 @@ h1{
     line-height: 1;
     font-weight:400;
     text-transform: uppercase;
-    &.title{
+}
+    .title{
         font-size:1.8em;
         width:100%;
         padding: 0.5em 1em;
-        background-color:$plum;
+        background-color:transparentize($plum,0.1);
         position:fixed;
         z-index:1000;
         span{text-transform: none;}
     }
-}
 
 h2{
     margin:0;
@@ -188,7 +187,7 @@ ul{padding:0;margin:0;}
     padding:25% 5%;
     z-index:1001;
 
-    background:transparent url(img/silo-dessert.jpg) no-repeat;
+    background:transparent url(img/header.jpg) no-repeat;
         background-attachment:fixed;
         background-size:cover;
 
@@ -209,7 +208,6 @@ ul{padding:0;margin:0;}
 }
 
 section{
-    //background-color: $plum;
     color:$white;
     width:100%;
     float:left;
@@ -271,16 +269,16 @@ section{
         }
     .section-meta{
         transition:transform 200ms ease-out;
-        background:transparentize($plum, 0.7);
+        background:transparentize($plum, 0.6);
         position:absolute;
+        padding:0.5em 1em 0.5em 0.5em;;
         top:33.33333%;
         left:0;
         height:33.33333%;
-        width:50%;
         display:flex;
         flex-direction:column;
         justify-content:center;
-        text-align:center;
+        text-align:left;
         transform-origin:left top 0px;
         &.anim{
             transform:matrix3d(0,0,-1,0,0,1,0,0,1,0,0,0,0,0,0,1);
@@ -288,15 +286,32 @@ section{
     }
 
     h2,h3 {
-        line-height:1;
+        line-height:1.2;
         margin:0;
         padding:0;
-        font-weight:normal;
+        font-weight:700;
+        text-transform: uppercase;
     }
+    
     h3{
+        margin-top:0.25em;
+        color:darken($white,10);
         font-weight: normal;
     }
 
+}
+.social-list{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;   
+}
+.social {
+    list-style-type: none;
+    margin-bottom:0.5em;
+    .btn{
+        font-size:0.875em;
+        padding:0.5em;
+    }
 }
 
 
@@ -307,24 +322,29 @@ section{
     ul{
         display:flex;
         justify-content:space-around;
-        li{
+        .footer-social{
             display:inline-block;
             margin-right: 1em;
-            padding:0.5em;
             a{
                 color:$white;
+                padding:0.5em 1em;
+                display: block;
+            }
+            sup{
+                font-size:1.5em;
+                top:-.12em;
             }
         }
     }
 }
 
-    a.btn{
-        text-decoration: none;
-        color:$white;
-        border: 2px solid $white;
-        padding:0.5em 1em;
-        display:inline-block;
-    }
+a.btn{
+    text-decoration: none;
+    color:$white;
+    border: 2px solid $white;
+    padding:0.5em 1em;
+    display:inline-block;
+}
 
 
 
