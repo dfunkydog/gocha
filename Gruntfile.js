@@ -44,9 +44,11 @@ module.exports = function(grunt) {
     },
 
     // add prefixes on dist
-    autoprefixer: {
+    postcss: {
       options: {
-        browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1']
+        processors: [
+          require('autoprefixer')({browsers: 'last 2 versions'})
+          ]
       },
       dist: {
         files: [{
@@ -116,7 +118,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', [
     'sass:dist',
-    'autoprefixer:dist',
+    'postcss:dist',
     'uglify'
     ]);
 
