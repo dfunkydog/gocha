@@ -39,7 +39,7 @@ module.exports = function(grunt) {
       },
       js:{
         files:[ 'js/*.js'],
-        tasks: [ 'concat','autoprefixer:dist' ]
+        tasks: [ 'concat','postcss:dist' ]
       }
     },
 
@@ -88,10 +88,8 @@ module.exports = function(grunt) {
         },
         files:{
           'js-min/scripts.min.js':[
-            'js/customizer.js',
-            'js/navigation.js',
-            'js/skip-link-focus.js',
-            'js/site.js'
+            'js/plugins.js',
+            'js/main'
           ]
         }
       }

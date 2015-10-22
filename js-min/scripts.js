@@ -1,6 +1,46 @@
 /*global $ */
 
 $(document).ready(function() {
+
+/* debounce */
+function debounce(func, wait, immediate) {
+	var timeout;
+	return function() {
+		var context = this, args = arguments;
+		var later = function() {
+			timeout = null;
+			if (!immediate) func.apply(context, args);
+		};
+		var callNow = immediate && !timeout;
+		clearTimeout(timeout);
+		timeout = setTimeout(later, wait);
+		if (callNow) func.apply(context, args);
+	};
+};
+
+var toggleNav = debounce(function(){
+     var scrollPosition = window.pageYOffset,
+     offHeight =( ($('.about').outerHeight() )/2 ) + $('h2.site-description').outerHeight();
+     console.log(offHeight);
+     if (position < scrollPosition){ 
+          $('.title').slideUp();
+       } else if ( (position > scrollPosition) && (scrollPosition > offHeight) ){
+         $('.title').slideDown('slow');
+       } else {
+         $('.title').slideUp();
+       }
+     position = scrollPosition;
+},100);
+
+window.addEventListener('scroll', toggleNav);
+var position = 0;
+    
+
+
+
+
+
+
     $('section').on('click', function() {
         var opele = $(this).siblings().children();
         if ( opele.hasClass('anim') ) { opele.removeClass('anim'); }
