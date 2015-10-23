@@ -16,25 +16,24 @@ function debounce(func, wait, immediate) {
 		timeout = setTimeout(later, wait);
 		if (callNow) func.apply(context, args);
 	};
-};
+}
 
 var toggleNav = debounce(function(){
      var scrollPosition = window.pageYOffset,
      offHeight =( ($('.about').outerHeight() )/2 ) + $('h2.site-description').outerHeight();
-     console.log(offHeight);
-     if (position < scrollPosition){ 
+     if (position < scrollPosition){
           $('.title').slideUp();
        } else if ( (position > scrollPosition) && (scrollPosition > offHeight) ){
-         $('.title').slideDown('slow');
+         $('.title').slideDown(100);
        } else {
-         $('.title').slideUp();
+         $('.title').slideUp(100);
        }
      position = scrollPosition;
 },100);
 
 window.addEventListener('scroll', toggleNav);
 var position = 0;
-    
+
 
 
 

@@ -138,9 +138,10 @@ h1{
         font-size:1.8em;
         width:100%;
         padding: 0.5em 1em;
-        background-color:transparentize($plum,0.1);
+        background-color:transparentize($black,0.1);
         position:fixed;
         z-index:1000;
+        display:none;
         span{text-transform: none;}
     }
 
@@ -184,30 +185,32 @@ ul{padding:0;margin:0;}
 }
 
 .about{
+    font-family:'nimbus roman no9 L','Courier new bold', Georgia, 'times', serif;
     width:100%;
     height:100%;
     position:relative;
     padding:25% 0;
     letter-spacing:0.05em;
-    z-index:1001;
 
     .flexbox &{display:flex;
         flex-direction:column;
         justify-content:center;
     }
-    
+
     p{
         margin:0 0 0.25em 0;
-        font-size:1rem;
+        font-size:1em;
     }
-    
+
     h2,h3{
         margin:0 0 0.25em 0;
+        font-weight:normal;
+        font-size:2em;
     }
-    
+
     .text-highlight{
         padding:0 5% 0 2.5%;
-        background-color: transparentize($plum, 0.5);
+        background-color: transparentize($black, 0.5);
     }
     @media screen and (min-width: 600px) {
         font-size: 1.5em;
@@ -280,7 +283,7 @@ section{
         }
     .section-meta{
         transition:transform 200ms ease-out;
-        background:transparentize($plum, 0.6);
+        background:transparentize($black, 0.6);
         position:absolute;
         padding:0.5em 1em 0.5em 0.5em;;
         top:33.33333%;

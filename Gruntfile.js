@@ -89,7 +89,7 @@ module.exports = function(grunt) {
         files:{
           'js-min/scripts.min.js':[
             'js/plugins.js',
-            'js/main'
+            'js/main.js'
           ]
         }
       }
