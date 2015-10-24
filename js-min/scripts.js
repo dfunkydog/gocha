@@ -20,7 +20,7 @@ function debounce(func, wait, immediate) {
 
 var toggleNav = debounce(function(){
      var scrollPosition = window.pageYOffset,
-     offHeight =( ($('.about').outerHeight() )/2 ) + $('h2.site-description').outerHeight();
+     offHeight = $('about').outerHeight();
      if (position < scrollPosition){
           $('.title').slideUp();
        } else if ( (position > scrollPosition) && (scrollPosition > offHeight) ){
